@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>contact form</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&display=swap" rel="stylesheet" />
+</head>
+<style>
+    /*CONTACT*/
+    .contact-wrapper {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin: 60px 0;
+    }
+
+    #contact-heading {
+        display: grid;
+        text-align: center;
+    }
+
+    .contact-container {
+        font-size: 12px;
+    }
+
+    #contact-heading ul {
+        text-align: center;
+    }
+
+    #contact-heading li {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 30px;
+        font-size: 20px;
+    }
+
+    #contact-heading li a {
+        color: grey;
+    }
+
+    #contact-heading li a:hover {
+        text-decoration: none;
+        color: rgb(46, 109, 125);
+    }
+
+    input {
+        line-height: normal;
+    }
+
+    textarea {
+        overflow: auto;
+    }
+
+    form {
+        padding: 37.5px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .email {
+        float: right;
+        width: 45%;
+    }
+
+    input[type="text"],
+    [type="email"],
+    select,
+    textarea {
+        background: none;
+        border: none;
+        border-bottom: solid 2px #474544;
+        color: #474544;
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0em 0 1.875em 0;
+        padding: 0 0 0.875em 0;
+        text-transform: uppercase;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    input[type="text"]:focus,
+    [type="email"]:focus,
+    textarea:focus {
+        outline: none;
+        padding: 0 0 0.875em 0;
+    }
+
+    .message {
+        float: none;
+    }
+
+    .name {
+        float: left;
+        width: 45%;
+    }
+
+    .telephone {
+        width: 100%;
+    }
+
+    textarea {
+        line-height: 150%;
+        height: 150px;
+        resize: none;
+        width: 100%;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #474544;
+    }
+
+    :-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        color: #474544;
+    }
+
+    #form_button {
+        background: none;
+        border: solid 2px #474544;
+        color: #474544;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Helvetica", Arial, sans-serif;
+        font-size: 0.875em;
+        font-weight: bold;
+        outline: none;
+        padding: 20px 35px;
+        text-transform: uppercase;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    #form_button:hover {
+        background: #474544;
+        color: #f2f3eb;
+    }
+
+    a {
+        text-decoration: none;
+        /* takes away lined text*/
+        color: rgb(57, 61, 63);
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: rgb(46, 109, 125);
+    }
+
+    h2 {
+        text-transform: uppercase;
+        margin: 40px 0;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+</style>
+
+<body>
+    <div id="contact-heading">
+        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            Contact
+        </h2>
+        <ul>
+            <li><a target="_blank" href="mailto:yannmackenna@gmail.com">Mail</a></li>
+            <li>
+                <a target="_blank" href="https://www.linkedin.com/company/26656962/">Linkedin</a>
+            </li>
+        </ul>
+    </div>
+    <div class="contact-wrapper"></div>
+    <div class="contact-container" id="contact">
+        <form action="/ajax/email" method="post" id="contact_form">
+            <div class="name">
+                <label for="name"></label>
+                <input type="text" placeholder="nom et prenom" name="name" id="name_input" required />
+            </div>
+            <div class="email">
+                <label for="email"></label>
+                <input type="email" placeholder="email" name="email" id="email_input" required />
+            </div>
+            <div class="telephone">
+                <label for="name"></label>
+                <input type="text" placeholder="portable" name="telephone" id="telephone_input" required />
+            </div>
+
+            <div class="message">
+                <label for="message"></label>
+                <textarea name="message" placeholder="message" id="message_input" cols="30" rows="5"
+                    required></textarea>
+            </div>
+
+            <div class="submit">
+                <button type="submit" id="form_button"
+                    onclick="swal.fire('Merci!','We will get back to you soon', 'success')">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.2/sweetalert2.all.min.js"></script>
+</body>
+
+</html>
