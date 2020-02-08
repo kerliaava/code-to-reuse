@@ -35,15 +35,15 @@ app.post("/ajax/email", function(request, response) {
     secure: true,
 
     auth: {
-      user: "channelexpertise.yannmackenna@gmail.com", // this should be YOUR GMAIL account
-      pass: "mackenna1985" // this should be your password
+      user: "", // this should be YOUR GMAIL account
+      pass: "" // this should be your password
     }
   });
   var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} TELEPHONE: ${request.body.telephone} MESSAGE: ${request.body.message}`;
   var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} ${request.body.telephone} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
   var mail = {
-    from: "channelexpertise.yannmackenna@gmail.com", // sender address
-    to: "channelexpertise.yannmackenna@gmail.com", // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
+    from: "", // sender address
+    to: "", // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
     subject: "Mail From Contact Form", // Subject line
     text: textBody,
     html: htmlBody
